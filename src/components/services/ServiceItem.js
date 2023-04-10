@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Card } from "flowbite-react"
 
-export default function ServiceItem({ service, children }) {
+const ServiceItem = ({ service, children }) => {
 
   const shortText = (text, maxLenght = 50) => {
     if (!text) return ' '
@@ -90,3 +90,5 @@ export default function ServiceItem({ service, children }) {
 </div>
   )
 }
+
+export default ServiceItem

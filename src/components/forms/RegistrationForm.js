@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { validImage, validUrl, samePassword } from "validators/ValidatorComponents";
 
-export default function RegistrationForm(props) {
+const RegistrationForm = props => {
     const { register, handleSubmit, formState: { errors }, getValues } = useForm()
 
     return (
@@ -107,3 +107,5 @@ export default function RegistrationForm(props) {
         </div>
     )
 }
+
+export default RegistrationForm

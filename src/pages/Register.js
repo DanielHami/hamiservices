@@ -7,7 +7,7 @@ import {Navigate} from 'react-router-dom'
 import onlyGuest from "components/hoc/onlyGuest";
 
  
-function Register(props) {
+const Register = (props) => {
     const [redirection, setRedirection] = useState(false)
     
     const registerUser = (userData) => {

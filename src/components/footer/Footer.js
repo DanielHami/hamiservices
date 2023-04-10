@@ -1,7 +1,7 @@
 import { Footer } from "flowbite-react"
 import {BsFacebook, BsInstagram, BsTwitter, BsGithub, BsDribbble} from "react-icons/bs"
 
-export default function CustomFooter() {
+const CustomFooter = () => {
     return (
         <Footer container={true} className="mt-auto">
         <div className="w-full">
@@ -84,3 +84,5 @@ export default function CustomFooter() {
       </Footer>
     )
 }
+
+export default CustomFooter

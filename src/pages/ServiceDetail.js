@@ -6,7 +6,7 @@ import OfferModal from "components/services/OfferModal"
 import { Card } from "flowbite-react"
 
 
-function ServiceDetail(props) {
+const ServiceDetail = (props) => {
     const { serviceId } = useParams()
     const { fetchById } = props
 
