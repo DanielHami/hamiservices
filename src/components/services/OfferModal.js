@@ -1,7 +1,9 @@
-import Modal from "components/modals/Modal"
+import Modals from "components/modals/Modal"
 import { useState } from "react"
 import toast, { Toaster } from 'react-hot-toast';
 import { createOffer } from "actions";
+import { Label } from "flowbite-react";
+import { TextInput } from "flowbite-react";
 
 const OfferModal = ({ service, auth }) => {
 
@@ -42,30 +44,38 @@ const OfferModal = ({ service, auth }) => {
 
     return (
         <>
-            <Modal onModalSubmit={handleSubmit}>
-                <form className='flex flex-col gap-4'>
+            <Modals onModalSubmit={handleSubmit}>
+                <form className="flex flex-col gap-4">
                     <div>
                         <div className="mb-2 block">
-                            <label>Write some note</label>
+                            <Label
+                                htmlFor="email1"
+                                value="Write some note"
+                            />
                         </div>
-                        <input
-                            name="note"
-                            onChange={handleChange}
+                        <TextInput
+                            id="email1"
                             type="text"
-                            className='border-gray-300 bg-gray-50 rounded-lg w-full'>
-
-                        </input>
+                            name="note"
+                            placeholder="name@flowbite.com"
+                            onChange={handleChange}
+                            required={true}
+                        />
                     </div>
                     <div>
                         <div className="mb-2 block">
-                            <label>How long you need service for</label>
+                            <Label
+                                htmlFor="password1"
+                                value="How long you need service for"
+                            />
                         </div>
-                        <input
-                            name="time"
-                            onChange={handleChange}
+                        <TextInput
+                            id="password1"
                             type="number"
-                            className='border-gray-300 bg-gray-50 rounded-lg w-full'>
-                        </input>
+                            name="time"
+                            required={true}
+                            onChange={handleChange}
+                        />
                     </div>
                 </form>
                 <div className="text-center mt-6">
@@ -76,7 +86,7 @@ const OfferModal = ({ service, auth }) => {
                         <p>Price: {offer.price}$</p>
                     </div>
                 </div>
-            </Modal>
+            </Modals>
             <Toaster position="top-right"
                 reverseOrder={false} />
         </>
