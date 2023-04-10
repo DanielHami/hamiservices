@@ -2,7 +2,6 @@ import ServiceItem from "components/services/ServiceItem";
 import { connect } from "react-redux"; //osszekapcsolas a funkciokat
 import { fetchServices } from 'actions'
 import React from "react";
-import { Carousel } from "flowbite-react";
 
 
 

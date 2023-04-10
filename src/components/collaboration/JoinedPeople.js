@@ -4,8 +4,8 @@ import { Badge } from "flowbite-react"
 const RenderJoinedPeople = ({users}) => {
 
     const statusClass = state => {
-        if (state == 'online') { return "success" }
-        if (state == 'offline') { return "failure" }
+        if (state === 'online') { return "success" }
+        if (state === 'offline') { return "failure" }
       }
 
     const renderUsers = (users) => {

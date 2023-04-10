@@ -1,4 +1,4 @@
-import Navbar from "components/header/Navbar";
+
 import Home from "pages/Home";
 import CustomFooter from "components/footer/Footer";
 import { Route, Routes } from 'react-router-dom'
@@ -9,7 +9,6 @@ import Faq from "pages/Faq";
 import Login from "pages/Login";
 import Register from "pages/Register";
 import NotFound from "pages/NotFound";
-import SecretPage from "pages/Hide";
 import React from "react";
 import CreateServices from "pages/services/createServices";
 import UserServices from "pages/services/UserServices";
@@ -20,7 +19,6 @@ import SentOffers from "pages/offers/SentOffers";
 import RecievedOffers from "pages/offers/RecievedOffers";
 import RecievedCollaboration from "pages/collaborations/RecievedCollaboration";
 import CollaborationDetail from "pages/collaborations/CollaborationDetail";
-import CollaborationFunc from "pages/collaborations/CollaborationFunc";
 import Navi from "components/header/Nav";
 
 

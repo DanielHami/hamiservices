@@ -1,7 +1,7 @@
 import initStore from "store";
 import { Provider } from 'react-redux'
 import ServiceApp from "ServiceApp";
-import { onAuthStateChanged, storeAuthUser,resetAuthState, subscribeToMessages,checkUserConnection} from "actions";
+import { onAuthStateChanged, storeAuthUser, subscribeToMessages,checkUserConnection} from "actions";
 import React from "react";
 
 const store = initStore()

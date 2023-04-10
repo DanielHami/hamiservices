@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { Badge } from "flowbite-react";
 import { Table } from "flowbite-react";
 import {AiFillClockCircle} from "react-icons/ai"
-import { connect } from "react-redux";
 import { Timestamp } from "firebase/firestore";
 
 class RecievedCollaboration extends React.Component {
@@ -65,7 +64,6 @@ class RecievedCollaboration extends React.Component {
   }
   render() {
     const { collaborations } = this.state
-    const { offers } = this.props.auth
     return (
       <div>
         <div className="mb-6" >

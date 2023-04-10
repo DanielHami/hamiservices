@@ -133,7 +133,7 @@ class CollaborationDetail extends React.Component {
           <div className="flex flex-col my-4 gap-4">
             <RenderJoinedPeople users={joinedPeople}/>
           </div>
-          {'noStarted' === 'noStarted' &&
+          {'noStarted' &&
               <div>
                 <button onClick={() => this.onStartCollaboration(collaboration)}
                         className=" mt-5 bg-blue-600 px-5 h-10 rounded-lg font-semibold tracking-wide text-sm text-white">
