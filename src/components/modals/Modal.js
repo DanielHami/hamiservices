@@ -1,4 +1,3 @@
-import 'tw-elements';
 
 import { Modal } from 'flowbite-react';
 import { Button } from 'flowbite-react';
