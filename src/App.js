@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import initStore from "store";
+import { Provider } from 'react-redux'
+import ServiceApp from "ServiceApp";
+import { onAuthStateChanged, storeAuthUser,resetAuthState, subscribeToMessages,checkUserConnection} from "actions";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const store = initStore()
+
+class App extends React.Component {
+
+  componentDidMount() {
+    this.unsubscribeAuth = onAuthStateChanged(authUser => {
+     // store.dispatch(resetAuthState())
+      store.dispatch(storeAuthUser(authUser)) 
+
+      this.unsubFromCheckUserConnection = () => {};
+
+      if(authUser) {
+        this.unsubscribeMessages = store.dispatch(subscribeToMessages(authUser.uid));
+        this.unsubFromCheckUserConnection = checkUserConnection(authUser.uid);
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeAuth();
+    this.unsubscribeMessages();
+    this.unsubFromCheckUserConnection();
+  }
+  render() {
+    return (
+      <Provider store={store}>
+        <ServiceApp />
+      </Provider>
+    );
+  }
 }
 
 export default App;
